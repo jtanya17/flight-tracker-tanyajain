@@ -42,3 +42,4 @@ This application provides real-time aviation data tracking. Once authorized with
 1. Plan to integrate flight-specific information between the aircraft icons on the map and the data box at the bottom of the page, currently they are mutually exclusive functionalities on the application.
 2. Improve the user interface to make it more intuitive and information-rich.
 3. The potential addition of a landing page.
+4. I haven't been able to include tests at this time.
