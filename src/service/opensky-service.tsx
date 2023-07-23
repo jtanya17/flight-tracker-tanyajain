@@ -28,7 +28,7 @@ export const getStateVectors = async (mapGeoBounds: IMapGeoBounds) => {
     const response = await fetch(targetUrl, {
       headers: {
         // Authorization: "Basic " + btoa(`${username}:${password}`),
-        Authorization: "Basic " + btoa(`${"openskyusertj"}:${"Farrago17"!}`),
+        Authorization: "Basic " + btoa(`${""}:${""}`),
       },
     });
 
