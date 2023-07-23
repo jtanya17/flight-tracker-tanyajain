@@ -15,6 +15,7 @@ import {
   IStateVectorData,
 } from "../model/opensky-model";
 
+//convert flight icon svg to an image to be plotted on the mapbox
 export const svgToImage = (path: string, width: number, height: number) => {
   return new Promise((resolve) => {
     const image = new Image(width, height);
@@ -25,6 +26,7 @@ export const svgToImage = (path: string, width: number, height: number) => {
   });
 };
 
+//fetch geographical bounds based on north, south lat and east, west long parameters
 export const getMapGeoBounds = (bounds: mapboxgl.LngLatBounds) => {
   let mapGeoBounds: IMapGeoBounds = {
     northernLatitude: 0.0,
@@ -40,6 +42,7 @@ export const getMapGeoBounds = (bounds: mapboxgl.LngLatBounds) => {
   return mapGeoBounds;
 };
 
+//features to show on flight icon popup - callsign and ICAO24
 export const createFeatures = (
   stateVectors: IStateVectorData | undefined
 ):
@@ -133,6 +136,7 @@ export const getSymbolLayout = (zoom: number) => {
     iconSize = 1.5;
   }
 
+  //adjust symbol layout based on current zoom
   const symbolLayout: SymbolLayout = {
     "icon-image": ["get", "iconName"],
     "icon-allow-overlap": true,
@@ -148,6 +152,7 @@ export const getSymbolLayout = (zoom: number) => {
   return symbolLayout;
 };
 
+//text to show on the flight icon popup
 export const getText = () => {
   let text: string | Expression | StyleFunction = [
     "format",
@@ -166,27 +171,6 @@ export const getText = () => {
   return text;
 };
 
-export const getColor = (altitide: number) => {
-  let percent = (altitide / 13000) * 100;
-  percent = percent > 100 ? 100 : percent;
-  percent = percent < 0 ? 0 : percent;
-
-  let r,
-    g,
-    b = 0;
-
-  if (percent < 50) {
-    r = 255;
-    g = Math.round(5.1 * percent);
-  } else {
-    r = Math.round(510 - 5.1 * percent);
-    g = 255;
-  }
-
-  let h = r * 0x10000 + g * 0x100 + b * 0x1;
-  return "#" + ("000000" + h.toString(16).slice(-6));
-};
-
 export const getIconName = (
   verticalRate: number,
   altitude: number,
@@ -196,6 +180,7 @@ export const getIconName = (
   return iconName;
 };
 
+//turn flight icon in direction of 
 export const getRotation = (
   verticalRate: number,
   altitude: number,
