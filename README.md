@@ -1,5 +1,5 @@
 # Flight Tracker
-This application is part of my job application to Cesium.
+This application is part of a job application.
 
 A real-time aviation data tracking application built using React and TypeScript, leveraging [OpenSky Network's REST API](https://openskynetwork.github.io/opensky-api/rest.html). 
 
@@ -42,5 +42,3 @@ This application provides real-time aviation data tracking. Once authorized with
 1. Plan to integrate flight-specific information between the aircraft icons on the map and the data box at the bottom of the page, currently they are mutually exclusive functionalities on the application.
 2. Improve the user interface to make it more intuitive and information-rich.
 3. The potential addition of a landing page.
-
-I look forward to hearing from you soon! :)
