@@ -1,5 +1,4 @@
 # Flight Tracker
-This application is part of a job application.
 
 A real-time aviation data tracking application built using React and TypeScript, leveraging [OpenSky Network's REST API](https://openskynetwork.github.io/opensky-api/rest.html). 
 
